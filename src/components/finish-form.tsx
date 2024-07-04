@@ -1,6 +1,10 @@
+import { IInfo } from "@/app/page"
 
 
-export function FinishForm(){
+interface FinishFormProps{
+  info ?: IInfo
+}
+export function FinishForm({info}: FinishFormProps){
   return (
     <>
       <form className="grid grid-cols-1 gap-8" style={{color:"hsl(231, 11%, 63%)"}}>

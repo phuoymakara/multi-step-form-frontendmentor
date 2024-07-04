@@ -1,6 +1,11 @@
 'use client'
 
+import { IInfo } from "@/app/page"
 import { useState } from "react"
+
+interface PlanFormProps{
+  setInfo: (info: IInfo) => void
+}
 
 export function PlanForm(){
   const[activeCard, setActiveCard] = useState<number>(0)
@@ -15,7 +20,7 @@ export function PlanForm(){
         </div>
         <div className="grid grid-cols-1 gap-8">
           {
-            isMonthly &&           <div className="grid grid-cols-3 gap-6">
+            isMonthly &&           <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
             <div onClick={()=>setActiveCard(0)} className={`border grid grid-cols-1 rounded-lg p-3 gap-8 ${activeCard===0?'border-blue-600 bg-slate-100':'hover:border-blue-500'}`}>
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 40 40"><g fill="none" fill-rule="evenodd"><circle cx="20" cy="20" r="20" fill="#FFAF7E"/><path fill="#FFF" fill-rule="nonzero" d="M24.995 18.005h-3.998v5.998h-2v-5.998H15a1 1 0 0 0-1 1V29a1 1 0 0 0 1 1h9.995a1 1 0 0 0 1-1v-9.995a1 1 0 0 0-1-1Zm-5.997 8.996h-2v-1.999h2v2Zm2-11.175a2.999 2.999 0 1 0-2 0v2.18h2v-2.18Z"/></g></svg>
               <div>
@@ -40,7 +45,7 @@ export function PlanForm(){
           </div>
           }
           {
-            !isMonthly &&           <div className="grid grid-cols-3 gap-6">
+            !isMonthly &&           <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
             <div onClick={()=>setActiveCard(0)} className={`border grid grid-cols-1 rounded-lg p-3 gap-8 ${activeCard===0?'border-blue-600 bg-slate-100':'hover:border-blue-500'}`}>
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 40 40"><g fill="none" fill-rule="evenodd"><circle cx="20" cy="20" r="20" fill="#FFAF7E"/><path fill="#FFF" fill-rule="nonzero" d="M24.995 18.005h-3.998v5.998h-2v-5.998H15a1 1 0 0 0-1 1V29a1 1 0 0 0 1 1h9.995a1 1 0 0 0 1-1v-9.995a1 1 0 0 0-1-1Zm-5.997 8.996h-2v-1.999h2v2Zm2-11.175a2.999 2.999 0 1 0-2 0v2.18h2v-2.18Z"/></g></svg>
               <div>
